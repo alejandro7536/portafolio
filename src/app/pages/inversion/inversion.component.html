@@ -1,0 +1,30 @@
+<h1 style="font-family: 'gilroy_600';" class="text-4xl text-gray-600 animate__animated animate__fadeInLeft">Proyectos de inversión</h1>
+<h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4 mt-8 animate__animated animate__fadeInDown">Criptomonedas</h3>
+<div class="grid grid-cols-4 gap-4 animate__animated animate__fadeInRight">
+    <div *ngFor="let moneda of monedas" class="h-44 border border-gray-300 rounded-lg flex flex-col items-center justify-center">
+        <div class="rounded-lg h-16 w-16 flex items-center justify-center">
+            <img [src]="moneda.image" alt="" class="h-8 w-8">
+        </div>
+        <span style="font-family: 'gilroy_600';" class="mt-1 text-gray-600 text-sm">{{moneda.name}}</span>
+        <span style="font-family: 'gilroy_300';" class="text-gray-400 text-xs">{{moneda.shortName}}</span>
+
+        <!-- <span style="font-family: 'gilroy_200';" class="text-lg">{{moneda.porcentaje}}%</span> -->
+    </div>
+</div>
+
+<div class="flex justify-between mt-8 animate__animated animate__fadeInDown">
+    <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600">Crea tu cuenta en Binance</h3>
+    <div>
+        <a href="https://accounts.binance.me/es-LA/register?ref=222352706" target="_blank">
+            <div class="flex">
+                <span style="font-family: 'gilroy_300';" class="text-sm text-gray-600">Ir a Binance</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+        </a>
+    </div>
+</div>
+<a href="https://accounts.binance.me/es-LA/register?ref=222352706" target="_blank">
+    <img src="./assets/img/binance.png" alt="" class="mt-4 w-full h-full rounded-lg shadow-lg animate__animated animate__fadeInUp">
+</a>

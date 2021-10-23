@@ -1,0 +1,135 @@
+<h1 style="font-family: 'gilroy_600';" class="text-4xl text-gray-600 animate__animated animate__fadeInLeft">Fotografía</h1>
+<div class="w-full h-full flex items-center justify-center" *ngIf="loading">
+    <img src="./assets/img/loader.gif" alt="" class="h-8 w-8">
+</div>
+<div *ngIf="!loading">
+    <div class="flex justify-between mt-8 animate__animated animate__fadeInDown">
+        <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600">Estadísticas de <a style="text-decoration: underline;" href="https://unsplash.com/@alejandroalas7536" target="_blank">Unsplash</a></h3>
+        <div>
+            <a href="https://unsplash.com/@alejandroalas7536" target="_blank">
+                <div class="flex">
+                    <span style="font-family: 'gilroy_300';" class="text-sm text-gray-600">Ver todas</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+        </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="mt-2 grid grid-cols-4 gap-3 animate__animated animate__fadeInDown">
+
+        <!-- Vistas -->
+        <div class="h-36 rounded-xl border border-blue-300 flex items-center justify-center">
+            <div class="flex flex-col items-center">
+                <div class="bg-white h-10 w-10 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+                </div>
+                <h1 style="font-family: 'gilroy_600';" class="text-lg text-blue-400 mt-2">{{stats?.views?.total | number}}</h1>
+                <span class="text-xs text-blue-400 "> + {{stats?.views?.historical?.change | number}} últimos 30 días </span>
+            </div>
+        </div>
+
+        <!-- Descargas -->
+        <div class="h-36 rounded-xl border border-indigo-300  flex items-center justify-center">
+            <div class="flex flex-col items-center">
+                <div class="bg-white h-10 w-10 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+                </div>
+                <h1 style="font-family: 'gilroy_600';" class="text-lg text-indigo-400 mt-2">{{stats?.downloads?.total | number}}</h1>
+                <span class="text-xs text-indigo-400 "> + {{stats?.downloads?.historical?.change | number}} últimos 30 días </span>
+            </div>
+        </div>
+
+        <!-- Seguidores -->
+        <div class="h-36 rounded-xl border border-purple-300  flex items-center justify-center">
+            <div class="flex flex-col items-center">
+                <div class="bg-white h-10 w-10 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                </div>
+                <h1 style="font-family: 'gilroy_600';" class="text-lg text-purple-400 mt-2">{{user?.followers_count | number}}</h1>
+                <span class="text-xs text-purple-400 "> Seguidores </span>
+            </div>
+        </div>
+
+        <!-- Fotografias -->
+        <div class="h-36 rounded-xl border border-gray-300 flex items-center justify-center">
+            <div class="flex flex-col items-center">
+                <div class="bg-white h-10 w-10 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                </div>
+                <h1 style="font-family: 'gilroy_600';" class="text-lg text-gray-400 mt-2">{{user?.total_photos | number}}</h1>
+                <span class="text-xs text-gray-400 "> Fotografías </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent images -->
+    <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mt-8 animate__animated animate__fadeInLeft">Fotografías recientes</h3>
+    <div class="mt-2 grid grid-cols-4 gap-3 animate__animated animate__fadeInUp">
+        <!-- image -->
+        <div *ngFor="let image of lastestPhotos">
+
+            <a href="{{image.urls.regular}}" data-fancybox="gallery">
+                <div class="h-48 rounded-xl shadow-lg flex flex-col-reverse" style="background-image: url({{image.urls.regular}}); background-size: cover; background-position: center;">
+                    <div class="h-2/6 rounded-b-xl grid grid-cols-3" style="background: rgb(2,0,36);background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);">
+                        <div class="flex items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg> &nbsp;<span class="text-xs" style="font-family: 'gilroy_400';">{{image.statistics.views.total | number}}</span>
+                        </div>
+                        <div class="flex items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg> &nbsp;<span class="text-xs" style="font-family: 'gilroy_400';">{{image.statistics.downloads.total | number}}</span>
+                        </div>
+                        <div class="flex items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg> &nbsp;<span class="text-xs" style="font-family: 'gilroy_400';">{{image.likes | number}}</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- populartPhotos images -->
+    <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mt-8 animate__animated animate__fadeInLeft">Fotografías populares</h3>
+    <div class="mt-2 grid grid-cols-4 gap-3 animate__animated animate__fadeInUp">
+        <!-- image -->
+        <div *ngFor="let image of populartPhotos">
+
+            <a href="{{image.urls.regular}}" data-fancybox="gallery">
+                <div class="h-48 rounded-xl shadow-lg flex flex-col-reverse " style="background-image: url({{image.urls.regular}}); background-size: cover; background-position: center;">
+                    <div class="h-2/6 rounded-b-xl grid grid-cols-3" style="background: rgb(2,0,36);background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);">
+                        <div class="flex items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg> &nbsp;<span class="text-xs" style="font-family: 'gilroy_400';">{{image.statistics.views.total | number}}</span>
+                        </div>
+                        <div class="flex items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg> &nbsp;<span class="text-xs" style="font-family: 'gilroy_400';">{{image.statistics.downloads.total | number}}</span>
+                        </div>
+                        <div class="flex items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg> &nbsp;<span class="text-xs" style="font-family: 'gilroy_400';">{{image.likes | number}}</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

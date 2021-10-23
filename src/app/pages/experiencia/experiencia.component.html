@@ -1,0 +1,61 @@
+<h1 style="font-family: 'gilroy_600';" class="text-4xl text-gray-600 animate__animated animate__fadeInLeft">Experiencia</h1>
+<div class="flex mt-8 mb-8">
+    <div class="w-1/2 mr-8 animate__animated animate__fadeInLeft">
+        <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4">Puesto laboral</h3>
+        <div class="h-64 rounded-xl shadow-md bg-gray-100 flex items-center justify-center p-4">
+            <div class="flex flex-col items-center">
+                <div class="bg-white h-14 w-14 rounded-lg flex items-center justify-center">
+                    <img src="/assets/img/promerica.jpg" alt="" class="h-14 w-14 rounded-lg">
+                </div>
+                <h1 style="font-family: 'gilroy_600';" class="text-2xl text-gray-600 mt-4">Banco Promerica</h1>
+                <h1 style="font-family: 'gilroy_600';" class="text-sm text-gray-600">Desarrollador Angular</h1>
+                <span class="text-sm text-gray-500"> Enero 2021 - Actualidad </span>
+            </div>
+        </div>
+    </div>
+    <div class="w-1/2 animate__animated animate__fadeInRight">
+        <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4">Mi experiencia</h3>
+        <div style="height: 255px;" class="overflow-y-auto scrolling-touch rep">
+            <div class="h-24 rounded-xl shadow-md bg-gray-100 flex items-center p-4 mb-4">
+                <div class="grid grid-cols-12 gap-1 w-full">
+                    <div class="col-span-2">
+                        <div class="bg-white h-16 w-16 rounded-lg flex items-center justify-center">
+                            <img src="./assets/img/creativa.png" alt="" class="h-16 w-16 rounded-lg">
+                        </div>
+                    </div>
+                    <div class="col-span-9 flex flex-col">
+                        <p class="text-lg text-gray-600" style="font-family: 'gilroy_600';">Creativa Consultores</p>
+                        <p class="text-sm text-gray-600" style="font-family: 'gilroy_600';">Java Junior developer</p>
+                        <p class="text-xs text-gray-600" style="font-family: 'gilroy_300';">Diciembre 2020</p>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <a href="https://creativaconsultores.com/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="animate__animated animate__fadeInUp">
+    <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4">Proyectos secundarios</h3>
+    <swiper class="swiper-container" [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+        <ng-template swiperSlide *ngFor="let item of sideProjects">
+            <a [href]="item.url" target="_blank">
+                <div class="h-48 w-48 rounded-xl shadow-md bg-gray-100 flex items-center justify-center p-4">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white h-14 w-14 rounded-lg flex items-center justify-center">
+                            <img [src]="item.image" alt="" class="h-10 w-10">
+                        </div>
+                        <h1 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mt-4">{{item.name}}</h1>
+                        <span class="text-xs text-gray-500"> {{item.fechaInicio}} {{item.fechaFin? '-': ''}} {{item.fechaFin}} </span>
+                    </div>
+                </div>
+            </a>
+        </ng-template>
+    </swiper>
+</div>

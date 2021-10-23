@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: "gilroy_100";
+    src: url(assets/fonts/Gilroy-Thin.ttf) format("opentype");
+}
+
+@font-face {
+    font-family: "gilroy_200";
+    src: url(assets/fonts/Gilroy-Light.ttf) format("opentype");
+}
+
+@font-face {
+    font-family: "gilroy_300";
+    src: url(assets/fonts/Gilroy-Regular.ttf) format("opentype");
+}
+
+@font-face {
+    font-family: "gilroy_400";
+    src: url(assets/fonts/Gilroy-SemiBold.ttf) format("opentype");
+}
+
+@font-face {
+    font-family: "gilroy_500";
+    src: url(assets/fonts/Gilroy-Bold.ttf) format("opentype");
+}
+
+@font-face {
+    font-family: "gilroy_600";
+    src: url(assets/fonts/Gilroy-ExtraBold.ttf) format("opentype");
+}
+
+@font-face {
+    font-family: "gilroy_700";
+    src: url(assets/fonts/Gilroy-Black.ttf) format("opentype");
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.box {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 10px 10px;
+    line-height: 1;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
