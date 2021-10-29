@@ -1,1 +1,10 @@
-<h1 style="font-family: 'gilroy_600';" class="text-4xl text-gray-600">Videos</h1>
+<h1 style="font-family: 'gilroy_600';" class="text-4xl text-gray-600 animate__animated animate__fadeInLeft">Videos</h1>
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 animate__animated animate__fadeInUp">
+    <div class="h-42 w-full shadow-lg rounded-lg" *ngFor="let video of videos">
+        <iframe class="w-full rounded-t-lg" [src]="video.url | sanitazer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="p-3">
+            <h1 style="font-family: 'gilroy_600';" class="text-sm text-gray-600">{{video.name}}</h1>
+            <p class="text-xs text-gray-500">{{video.fecha}}</p>
+        </div>
+    </div>
+</div>

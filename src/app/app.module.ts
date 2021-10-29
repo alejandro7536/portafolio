@@ -12,6 +12,7 @@ import { FotografiaComponent } from './pages/fotografia/fotografia.component';
 import { VideosComponent } from './pages/videos/videos.component';
 import { SwiperModule } from 'swiper/angular';
 import { InversionComponent } from './pages/inversion/inversion.component';
+import { SanitazerPipe } from './pipes/sanitazer.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InversionComponent } from './pages/inversion/inversion.component';
     ExperienciaComponent,
     FotografiaComponent,
     VideosComponent,
-    InversionComponent
+    InversionComponent,
+    SanitazerPipe
   ],
   imports: [
     BrowserModule,

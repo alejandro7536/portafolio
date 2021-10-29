@@ -27,9 +27,21 @@ export class InversionComponent implements OnInit {
         porcentaje: 15
       },
       {
-        image: './assets/svg/polkadot.svg',
-        name: 'Polkadot',
-        shortName:'DOT',
+        image: './assets/img/saitama.png',
+        name: 'Saitama',
+        shortName:'SAITAMA',
+        porcentaje: 10
+      },
+      {
+        image: './assets/img/kishu.jpg',
+        name: 'Kishu Inu',
+        shortName:'KISHU',
+        porcentaje: 10
+      },
+      {
+        image: './assets/svg/safemoon.svg',
+        name: 'SafeMoon',
+        shortName:'SAFEMOON',
         porcentaje: 10
       }
     ]

@@ -141,3 +141,8 @@ export interface Moneda {
   shortName: string;
   porcentaje: number;
 }
+export interface Video {
+  url: string;
+  name: string;
+  fecha: string;
+}
