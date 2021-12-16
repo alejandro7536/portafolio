@@ -35,7 +35,7 @@ export class ExperienciaComponent implements OnInit {
       {
         image: '/assets/img/vago.svg',
         name: 'Vago',
-        url: 'https://filechap.elesteam.com/',
+        url: 'https://vago.elesteam.com/',
         fechaInicio: 'Enero 2021',
         fechaFin: 'Febrero 2021'
       },

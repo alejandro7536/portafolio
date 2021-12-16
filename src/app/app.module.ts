@@ -13,6 +13,7 @@ import { VideosComponent } from './pages/videos/videos.component';
 import { SwiperModule } from 'swiper/angular';
 import { InversionComponent } from './pages/inversion/inversion.component';
 import { SanitazerPipe } from './pipes/sanitazer.pipe';
+import { Sidebar2Component } from './components/sidebar2/sidebar2.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SanitazerPipe } from './pipes/sanitazer.pipe';
     FotografiaComponent,
     VideosComponent,
     InversionComponent,
-    SanitazerPipe
+    SanitazerPipe,
+    Sidebar2Component
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,9 @@ import { SanitazerPipe } from './pipes/sanitazer.pipe';
     HttpClientModule,
     SwiperModule
   ],
-  providers: [],
+  providers: [
+    {provide: 'googleTagManagerId',  useValue: 'GTM-K8C9MPM'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

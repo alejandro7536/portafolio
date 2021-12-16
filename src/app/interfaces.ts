@@ -140,6 +140,7 @@ export interface Moneda {
   name: string;
   shortName: string;
   porcentaje: number;
+  url?: string;
 }
 export interface Video {
   url: string;

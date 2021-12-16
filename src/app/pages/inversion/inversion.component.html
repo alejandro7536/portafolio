@@ -1,14 +1,18 @@
 <h1 style="font-family: 'gilroy_600';" class="text-4xl text-gray-600 animate__animated animate__fadeInLeft">Proyectos de inversión</h1>
 <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4 mt-8 animate__animated animate__fadeInDown">Criptomonedas</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 animate__animated animate__fadeInRight">
-    <div *ngFor="let moneda of monedas" class="h-44 border border-gray-300 rounded-lg flex flex-col items-center justify-center">
-        <div class="rounded-lg h-16 w-16 flex items-center justify-center">
-            <img [src]="moneda.image" alt="" class="h-8 w-8">
-        </div>
-        <span style="font-family: 'gilroy_600';" class="mt-1 text-gray-600 text-sm">{{moneda.name}}</span>
-        <span style="font-family: 'gilroy_300';" class="text-gray-400 text-xs">{{moneda.shortName}}</span>
+    <div *ngFor="let moneda of monedas">
+        <a [href]="moneda.url" target="_blank">
+            <div class="h-44 border border-gray-300 rounded-lg flex flex-col items-center justify-center">
+                <div class="rounded-lg h-16 w-16 flex items-center justify-center">
+                    <img [src]="moneda.image" alt="" class="h-8 w-8">
+                </div>
+                <span style="font-family: 'gilroy_600';" class="mt-1 text-gray-600 text-sm">{{moneda.name}}</span>
+                <span style="font-family: 'gilroy_300';" class="text-gray-400 text-xs">{{moneda.shortName}}</span>
 
-        <!-- <span style="font-family: 'gilroy_200';" class="text-lg">{{moneda.porcentaje}}%</span> -->
+                <!-- <span style="font-family: 'gilroy_200';" class="text-lg">{{moneda.porcentaje}}%</span> -->
+            </div>
+        </a>
     </div>
 </div>
 
@@ -26,5 +30,5 @@
     </div>
 </div>
 <a href="https://accounts.binance.me/es-LA/register?ref=222352706" target="_blank">
-    <img src="./assets/img/binance.png" alt="" class="mt-4 w-full h-full rounded-lg shadow-lg animate__animated animate__fadeInUp">
+    <img src="./assets/img/binance.png" alt="" class="mt-4 w-full w-full rounded-lg shadow-lg animate__animated animate__fadeInUp">
 </a>
