@@ -25,10 +25,6 @@ export class EducacionComponent implements OnInit {
         description: 'Colonia La Rábida, San Salvador'
       },
       {
-        title: 'Correo',
-        description: 'alejandroalas7536@gmail.com'
-      },
-      {
         title: 'Fecha de nacimiento',
         description: '28 de febrero de 1995'
       },
@@ -39,6 +35,10 @@ export class EducacionComponent implements OnInit {
       {
         title: 'Idiomas',
         description: 'Español, inglés básico'
+      },
+      {
+        title: 'Correo',
+        description: 'alejandroalas7536@gmail.com'
       }
     ]
 

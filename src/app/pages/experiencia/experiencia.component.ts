@@ -65,11 +65,26 @@ export class ExperienciaComponent implements OnInit {
 
 
   config: SwiperOptions = {
-    slidesPerView: 4.3,
-    spaceBetween: 50,
     navigation: false,
     pagination: { clickable: true },
-    autoplay: true
+    autoplay: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1.7,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 3.3,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      900: {
+        slidesPerView: 4.3,
+        spaceBetween: 50
+      }
+    }
   };
 
   ngOnInit(): void {

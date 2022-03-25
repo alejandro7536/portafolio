@@ -1,0 +1,14 @@
+@media only screen and (max-width: 1000px) {
+    .hide {
+        display: none;
+    }
+    .large {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .show {
+        display: none;
+    }
+}

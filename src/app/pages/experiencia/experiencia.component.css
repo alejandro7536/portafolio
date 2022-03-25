@@ -6,3 +6,13 @@
 .rep::-webkit-scrollbar {
     display: none;
 }
+
+.short {
+    display: 255px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .short {
+        height: auto;
+    }
+}

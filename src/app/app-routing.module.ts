@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { EducacionComponent } from './pages/educacion/educacion.component';
 import { ExperienciaComponent } from './pages/experiencia/experiencia.component';
 import { FotografiaComponent } from './pages/fotografia/fotografia.component';
 import { VideosComponent } from './pages/videos/videos.component';
 import { InversionComponent } from './pages/inversion/inversion.component';
+import { Page404Component } from './pages/page404/page404.component';
 
 const routes: Routes = [
   {
@@ -14,28 +15,37 @@ const routes: Routes = [
   },
   {
     path: 'formacion',
-    component: EducacionComponent
+    loadChildren: () => import('./pages/educacion/educacion.module').then(m => m.EducacionModule)
   },
   {
     path: 'experiencia',
-    component: ExperienciaComponent
+    loadChildren: () => import('./pages/experiencia/experiencia.module').then(m => m.ExperienciaModule)
+
   },
   {
     path: 'fotografia',
-    component: FotografiaComponent
+    loadChildren: () => import('./pages/fotografia/fotografia.module').then(m => m.FotografiaModule)
+
   },
   {
     path: 'video',
-    component: VideosComponent
+    loadChildren: () => import('./pages/videos/videos.module').then(m => m.VideosModule)
+
   },
   {
     path: 'inversion',
-    component: InversionComponent
+    loadChildren: () => import('./pages/inversion/inversion.module').then(m => m.InversionModule)
+
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    loadChildren: () => import('./pages/page404/page404.module').then(m => m.Page404Module)
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
