@@ -9,6 +9,7 @@ import { Video } from 'src/app/interfaces';
 export class VideosComponent implements OnInit {
 
   public videos!: Video[];
+  public videosMusica!: Video[];
 
   constructor() { }
 
@@ -53,6 +54,29 @@ export class VideosComponent implements OnInit {
         url:'https://www.youtube.com/embed/Ek3LyBWtJbY',
         name: 'Como subir tu Angular app a Firebase hosting',
         fecha: '6 nov 2020'
+      },
+      {
+        url:'https://www.youtube.com/embed/_Mkxfz5yjdE',
+        name: 'Cómo crear un Wizard (stepper) customizado',
+        fecha: '9 ene 2022'
+      },
+      {
+        url:'https://www.youtube.com/embed/LwKsb6116DE',
+        name: 'Implementado Google Analytics en una Angular app',
+        fecha: '15 ene 2022'
+      }
+    ];
+
+    this.videosMusica = [
+      {
+        url:'https://www.youtube.com/embed/g3ory4zew2o',
+        name: 'Modificando secuencias con Reaper',
+        fecha: '22 ene 2022'
+      },
+      {
+        url:'https://www.youtube.com/embed/zoPqAUYfHYc',
+        name: 'Porque estás aquí - Cover',
+        fecha: '13 dic 2020'
       }
     ]
   }

@@ -19,42 +19,42 @@ export class ExperienciaComponent implements OnInit {
   constructor() {
     this.sideProjects = [
       {
-        image: '/assets/img/pefis.png',
+        image: './assets/img/pefis.png',
         name: 'Pefis web',
         url: 'http://pefis.elesteam.com/',
         fechaInicio: 'Marzo 2020',
         fechaFin: 'Abril 2020'
       },
       {
-        image: '/assets/img/filechap.png',
+        image: './assets/img/filechap.png',
         name: 'FileChap',
         url: 'https://filechap.elesteam.com/',
         fechaInicio: 'Agosto 2020',
         fechaFin: 'Octubre 2020'
       },
       {
-        image: '/assets/img/vago.svg',
+        image: './assets/img/vago.svg',
         name: 'Vago',
         url: 'https://vago.elesteam.com/',
         fechaInicio: 'Enero 2021',
         fechaFin: 'Febrero 2021'
       },
       {
-        image: '/assets/img/avisame.png',
+        image: './assets/img/avisame.png',
         name: 'Avisame Web',
         url: 'https://avisame.elesteam.com/',
         fechaInicio: 'Noviembre 2020',
         fechaFin: ''
       },
       {
-        image: '/assets/img/cinema.png',
+        image: './assets/img/cinema.png',
         name: 'PelisApp',
         url: 'https://alejandro7536.github.io/peliculas-app/',
         fechaInicio: 'Octubre 2020',
         fechaFin: ''
       },
       {
-        image: '/assets/img/spotimusic.png',
+        image: './assets/img/spotimusic.png',
         name: 'Spotimusic',
         url: 'https://alejandro7536.github.io/spotimusic/',
         fechaInicio: 'Septiembre 2020',
