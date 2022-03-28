@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2'
+
 import { InformationRow } from 'src/app/interfaces';
 import { Certificacion } from '../../interfaces';
+import { HttpClient } from '@angular/common/http';
+import { ajax } from 'rxjs/ajax'
 
 @Component({
   selector: 'app-educacion',
@@ -9,12 +14,17 @@ import { Certificacion } from '../../interfaces';
 })
 export class EducacionComponent implements OnInit {
 
-  edad!:number;
+  edad!: number;
   informacion!: InformationRow[];
   certificaciones!: Certificacion[];
   tecImages!: any[];
+  mailForm!: FormGroup;
+  enviando: boolean = false;
 
-  constructor() {
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient
+  ) {
     this.informacion = [
       {
         title: 'Edad',
@@ -22,7 +32,7 @@ export class EducacionComponent implements OnInit {
       },
       {
         title: 'Dirección',
-        description: 'Colonia La Rábida, San Salvador'
+        description: 'Santa Rita, Chalatenango'
       },
       {
         title: 'Fecha de nacimiento',
@@ -144,6 +154,66 @@ export class EducacionComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.createForm();
+  }
+
+  createForm() {
+    this.mailForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required]
+    });
+  }
+
+  onSubmit() {
+    if (this.mailForm.valid) {
+      this.mailForm.disable();
+      this.enviando = true;
+      let form = new FormData();
+      form.append("name", this.mailForm.get('name')?.value);
+      form.append("email", this.mailForm.get('email')?.value);
+      form.append("message", this.mailForm.get('message')?.value);
+      form.append("_subject", "Portafolio");
+      form.append("_honey", "");
+      form.append("_captcha", "false");
+
+      ajax.post('https://formsubmit.co/b631ee1fb3c5e766db3239fba462a194', form).subscribe(
+        res => {
+          if (res.status == 200) {
+            Swal.fire({
+              title: `Hola ${this.mailForm.get('name')?.value} 👋`,
+              text: 'Tu mensaje ha sido enviado',
+              width: 600,
+              icon: 'success',
+              padding: '3em',
+              confirmButtonColor: 'green',
+              backdrop: `
+            rgba(0,0,0,0.3)
+          `
+            })
+            this.enviando = false;
+            this.mailForm.reset();
+            this.mailForm.enable();
+          }
+        }, error => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Ups...',
+            text: 'Algo salió mal!'
+          })
+        }
+      )
+    }
+  }
+
+  get nameValid() {
+    return this.mailForm.get('name')?.invalid && this.mailForm.get('name')?.touched;
+  }
+  get emailValid() {
+    return this.mailForm.get('email')?.invalid && this.mailForm.get('email')?.touched;
+  }
+  get messageValid() {
+    return this.mailForm.get('message')?.invalid && this.mailForm.get('message')?.touched;
   }
 
 }
