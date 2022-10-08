@@ -6,6 +6,7 @@ import { InformationRow } from 'src/app/interfaces';
 import { Certificacion } from '../../interfaces';
 import { HttpClient } from '@angular/common/http';
 import { ajax } from 'rxjs/ajax'
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
 
 @Component({
   selector: 'app-educacion',
@@ -23,7 +24,8 @@ export class EducacionComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private gtm: GoogleTagManagerService
   ) {
     this.informacion = [
       {
@@ -203,6 +205,16 @@ export class EducacionComponent implements OnInit {
           })
         }
       )
+
+      this.gtm.pushTag({
+        event: 'sendMail',
+        content: {
+          description: 'Contacto por correo electronico',
+          name: this.mailForm.get('name')?.value,
+          email:this.mailForm.get('email')?.value,
+          message: this.mailForm.get('message')?.value
+        }
+      });
     }
   }
 
@@ -214,6 +226,15 @@ export class EducacionComponent implements OnInit {
   }
   get messageValid() {
     return this.mailForm.get('message')?.invalid && this.mailForm.get('message')?.touched;
+  }
+
+  senTagCV() {
+    this.gtm.pushTag({
+      event: 'donwloadCV',
+      content: {
+        description: 'Descarga de CV'
+      }
+    });
   }
 
 }

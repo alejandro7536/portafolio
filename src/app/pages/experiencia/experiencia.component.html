@@ -8,28 +8,28 @@
                     <img src="./assets/img/promerica.jpg" alt="" class="h-14 w-14 rounded-lg">
                 </div>
                 <h1 style="font-family: 'gilroy_600';" class="text-2xl text-gray-600 mt-4">Banco Promerica</h1>
-                <h1 style="font-family: 'gilroy_600';" class="text-sm text-gray-600">Desarrollador Angular</h1>
-                <span class="text-sm text-gray-500"> Enero 2021 - Actualidad </span>
+                <h1 style="font-family: 'gilroy_600';" class="text-sm text-gray-600">Analista programador</h1>
+                <span class="text-sm text-gray-500"> Junio 2022 - Actualidad </span>
             </div>
         </div>
     </div>
     <div class="w-full md:w-1/2 mt-4 md:mt-0 animate__animated animate__fadeInRight">
         <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4">Mi experiencia</h3>
         <div class="overflow-y-auto scrolling-touch rep short">
-            <div class="h-auto md:h-24 rounded-xl shadow-md bg-gray-100 flex items-center p-4 mb-4">
+            <div class="h-auto md:h-24 rounded-xl shadow-md bg-gray-100 flex items-center p-4 mb-4" *ngFor="let work of works">
                 <div class="grid grid-cols-12 gap-1 w-full">
                     <div class="col-span-3 lg:col-span-2">
                         <div class="bg-white h-16 w-16 rounded-lg flex items-center justify-center">
-                            <img src="./assets/img/creativa.png" alt="" class="h-16 w-16 rounded-lg">
+                            <img [src]="work.image" alt="" class="h-16 w-16 rounded-lg">
                         </div>
                     </div>
                     <div class="col-span-8 lg:col-span-9 flex flex-col">
-                        <p class="text-lg text-gray-600" style="font-family: 'gilroy_600';">Creativa Consultores</p>
-                        <p class="text-sm text-gray-600" style="font-family: 'gilroy_600';">Java Junior developer</p>
-                        <p class="text-xs text-gray-600" style="font-family: 'gilroy_300';">Diciembre 2020</p>
+                        <p class="text-lg text-gray-600" style="font-family: 'gilroy_600';">{{work.empresa}}</p>
+                        <p class="text-sm text-gray-600" style="font-family: 'gilroy_600';">{{work.position}}</p>
+                        <p class="text-xs text-gray-600" style="font-family: 'gilroy_300';">{{work.fechaInicio}}{{work.fechaFin? ' - ': ''}}{{work.fechaFin}}</p>
                     </div>
                     <div class="flex items-center justify-center">
-                        <a href="https://creativaconsultores.com/" target="_blank">
+                        <a [href]="work.url" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>

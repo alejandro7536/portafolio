@@ -15,6 +15,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 export class ExperienciaComponent implements OnInit {
 
   sideProjects!: Project[];
+  works!: any[];
 
   constructor() {
     this.sideProjects = [
@@ -60,7 +61,25 @@ export class ExperienciaComponent implements OnInit {
         fechaInicio: 'Septiembre 2020',
         fechaFin: ''
       }
-    ]
+    ];
+     this.works = [
+      {
+        image: './assets/img/promerica.jpg',
+        url: 'https://www.promerica.com.sv/',
+        position: 'Desarrollador Angular',
+        fechaInicio: 'Enero 2021',
+        fechaFin: 'Mayo 2022',
+        empresa: 'Banco Promerica'
+      },
+      {
+        image: './assets/img/creativa.png',
+        url: 'https://creativaconsultores.com/',
+        position: 'Java Junior developer',
+        fechaInicio: 'Diciembre 2020',
+        fechaFin: null,
+        empresa: 'Creativa Consultores'
+      }
+     ]
    }
 
 
