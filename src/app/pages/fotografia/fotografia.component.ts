@@ -4,6 +4,7 @@ import { UnsplashService } from '../../services/unsplash.service';
 import { combineLatest } from 'rxjs';
 import { Image } from '../../interfaces';
 import { tap } from 'rxjs/operators';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
 @Component({
   selector: 'app-fotografia',
   templateUrl: './fotografia.component.html',
@@ -18,7 +19,8 @@ export class FotografiaComponent implements OnInit {
   loading: boolean = false;
 
   constructor(
-    private unsplash: UnsplashService
+    private unsplash: UnsplashService,
+    private gtm: GoogleTagManagerService
   ) { }
 
   ngOnInit(): void {
@@ -33,4 +35,15 @@ export class FotografiaComponent implements OnInit {
       });
   }
 
+
+  sendTag(image: any) {
+    this.gtm.pushTag({
+      event: 'viewImage',
+      content: {
+        description: 'Imagen vista',
+        url: image.urls.regular
+      }
+    });
+
+  }
 }

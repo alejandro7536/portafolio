@@ -78,7 +78,7 @@
         <!-- image -->
         <div *ngFor="let image of lastestPhotos">
 
-            <a href="{{image.urls.regular}}" data-fancybox="gallery">
+            <a href="{{image.urls.regular}}" data-fancybox="gallery" (click)="sendTag(image)">
                 <div class="h-48 rounded-xl shadow-lg flex flex-col-reverse" style="background-image: url({{image.urls.regular}}); background-size: cover; background-position: center;">
                     <div class="h-2/6 rounded-b-xl grid grid-cols-3" style="background: rgb(2,0,36);background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);">
                         <div class="flex items-center justify-center text-white">
@@ -108,7 +108,7 @@
         <!-- image -->
         <div *ngFor="let image of populartPhotos">
 
-            <a href="{{image.urls.regular}}" data-fancybox="gallery">
+            <a href="{{image.urls.regular}}" data-fancybox="gallery" (click)="sendTag(image)">
                 <div class="h-48 rounded-xl shadow-lg flex flex-col-reverse " style="background-image: url({{image.urls.regular}}); background-size: cover; background-position: center;">
                     <div class="h-2/6 rounded-b-xl grid grid-cols-3" style="background: rgb(2,0,36);background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);">
                         <div class="flex items-center justify-center text-white">
