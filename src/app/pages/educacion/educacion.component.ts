@@ -152,6 +152,9 @@ export class EducacionComponent implements OnInit {
       {
         value: './assets/tec/google-analytics-3.svg'
       },
+      {
+        value: './assets/tec/ic_looker_studio.svg'
+      },
     ]
   }
 

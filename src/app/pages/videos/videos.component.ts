@@ -16,6 +16,16 @@ export class VideosComponent implements OnInit {
   ngOnInit(): void {
     this.videos = [
       {
+        url:'https://www.youtube.com/embed/LEdYB0R6mkw',
+        name: 'Google Tag Manager y Google Analytics 4 en Angular',
+        fecha: '21 ene 2023'
+      },
+      {
+        url:'https://www.youtube.com/embed/fpNsxkRwHjw',
+        name: 'ChatGPT en Angular - Parte 1',
+        fecha: '25 feb 2023'
+      },
+      {
         url:'https://www.youtube.com/embed/FOo1gpxm8k8',
         name: 'Como subir tu Angular app a Github Pages',
         fecha: '28 nov 2020'
@@ -68,6 +78,21 @@ export class VideosComponent implements OnInit {
     ];
 
     this.videosMusica = [
+      {
+        url:'https://www.youtube.com/embed/-uoAWauxju0',
+        name: 'Vida Encontré - Cover - Tutorial - Guitarra',
+        fecha: '13 feb 2023'
+      },
+      {
+        url:'https://www.youtube.com/embed/pRbXG-dTTbk',
+        name: 'Poderoso 25 conmemorativo - Cover - Tutorial - Guitarra',
+        fecha: '5 feb 2023'
+      },
+      {
+        url:'https://www.youtube.com/embed/nWUAk9Z2kGg',
+        name: 'Tú Harás - Solo de Guitarra - Cover - Tutorial',
+        fecha: '29 ene 2023'
+      },
       {
         url:'https://www.youtube.com/embed/g3ory4zew2o',
         name: 'Modificando secuencias con Reaper',
