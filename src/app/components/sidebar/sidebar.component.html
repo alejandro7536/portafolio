@@ -1,15 +1,10 @@
-<div class="flex flex-col justify-between content-between h-screen">
-    <div class="pt-12 pl-8 pr-8">
-        <div class="flex flex-row-reverse" style="margin-bottom: -30px !important;">
-            <a (click)="sidebarService.statusData =  false" class="cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-            </a>
-        </div>
+<div class="flex flex-col justify-between content-between h-screen p-4">
+  <div class=" bg-gray-100 rounded-xl border h-full flex flex-col justify-between">
+    <div class="p-8" >
+
         <!-- header -->
-        <div class="flex text-gray-600">
-            <div class="rounded-full mt-4">
+        <div class="flex text-gray-600 items-center">
+            <div class="rounded-full">
                 <img src="./assets/img/me3.jpg" alt="" class="rounded-full" style="height: 90px; width: 90px;">
             </div>
             <div class="pl-4 flex flex-col justify-center">
@@ -20,49 +15,53 @@
 
         <!-- Descripcion -->
         <div class="mt-8 text-gray-600">
-            <p style="font-family: 'gilroy_300'; font-size: 13px;">Ingeniero de sistemas informáticos enfocado en el desarrollo web con tecnologías modernas. Interesado en entornos de desarrollo con metodologías ágiles y muy cómodo trabajando en equipo. Siempre en constante aprendizaje con el objetivo de
+            <p style="font-family: 'gilroy_300'; font-size: 14px;">Ingeniero de sistemas informáticos enfocado en el desarrollo web con tecnologías modernas. Interesado en entornos de desarrollo con metodologías ágiles y muy cómodo trabajando en equipo. Siempre en constante aprendizaje con el objetivo de
                 perfeccionar mis habilidades.</p><br>
-            <p style="font-family: 'gilroy_300'; font-size: 13px;">He participado en congresos como el COMPDES y dado diferentes tipos de ponencias con respecto a metodologías de desarrollo de software. En mi periodo académico fui becario de la Universidad de el Salvador.</p>
+            <p style="font-family: 'gilroy_300'; font-size: 14px;">He participado en congresos como el COMPDES y dado diferentes tipos de ponencias con respecto a metodologías de desarrollo de software. En mi periodo académico fui becario de la Universidad de el Salvador.</p>
         </div>
 
         <!-- Menu -->
         <div class="mt-10">
 
-            <div class="flex mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                </svg>
-                <a class="ml-6 text-md text-gray-500" routerLinkActive='text-gray-700' style="font-family: 'gilroy_500'; cursor: pointer !important;" routerLink="/formacion">Formación</a>
+            <div class="flex mb-4 ">
+
+                <a class="text-md text-gray-500 flex gap-4" routerLinkActive='text-gray-900' style="font-family: 'gilroy_500'; cursor: pointer !important;" routerLink="/formacion">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                  </svg>
+
+                  Formación</a>
             </div>
 
             <div class="flex mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-                <a class="ml-6 text-md text-gray-500" routerLinkActive='text-gray-700' style="font-family: 'gilroy_500'; cursor: pointer !important;" routerLink="/experiencia">Experiencia</a>
+                <a class="text-md text-gray-500 flex gap-4" routerLinkActive='text-gray-900' style="font-family: 'gilroy_500'; cursor: pointer !important;" routerLink="/experiencia">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>Experiencia</a>
             </div>
 
             <div class="flex mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-                <a class="ml-6 text-md text-gray-500" routerLinkActive='text-gray-700' style="font-family: 'gilroy_500'; cursor: pointer !important;" routerLink="/fotografia">Fotografía</a>
+
+                <a class="text-md text-gray-500 flex gap-4" routerLinkActive='text-gray-900' style="font-family: 'gilroy_500'; cursor: pointer !important;" routerLink="/fotografia">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  Fotografía</a>
             </div>
 
             <div class="flex mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-          </svg>
-                <a class="ml-6 text-md text-gray-500" routerLinkActive='text-gray-700' style="font-family: 'gilroy_500'; cursor: pointer !important;" routerLink="/video">Videos</a>
+
+                <a class="text-md text-gray-500 flex gap-4" routerLinkActive='text-gray-900' style="font-family: 'gilroy_500'; cursor: pointer !important;" routerLink="/video">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>Videos</a>
             </div>
-            <!-- <div class="flex mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-              </svg>
-                <a class="ml-6 text-md text-gray-500" routerLinkActive='text-gray-700' style="font-family: 'gilroy_500'; cursor: pointer !important;" routerLink="/inversion">Inversión</a>
-            </div> -->
+
+            <div title="Ocultar bio" class="border cursor-pointer text-gray-500 h-8 w-8 flex justify-center items-center rounded-md hover:shadow-lg" (click)="sidebarService.statusData =  false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          </div>
         </div>
     </div>
 
@@ -99,4 +98,5 @@
             </a>
         </div>
     </div>
+  </div>
 </div>

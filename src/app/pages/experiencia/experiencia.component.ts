@@ -20,6 +20,20 @@ export class ExperienciaComponent implements OnInit {
   constructor() {
     this.sideProjects = [
       {
+        image: './assets/img/author.png',
+        name: 'Author Print',
+        url: 'http://author-print.com/',
+        fechaInicio: 'Febrero 2025',
+        fechaFin: 'Julio 2025'
+      },
+      {
+        image: './assets/img/driveNow.png',
+        name: 'Drivenowsv',
+        url: 'http://drivenowsv.com/',
+        fechaInicio: 'Febrero 2025',
+        fechaFin: 'Actualidad'
+      },
+      {
         image: './assets/img/pefis.png',
         name: 'Pefis web',
         url: 'http://pefis.elesteam.com/',
@@ -101,6 +115,10 @@ export class ExperienciaComponent implements OnInit {
       // when window width is >= 640px
       900: {
         slidesPerView: 4.3,
+        spaceBetween: 50
+      },
+      1200: {
+        slidesPerView: 6.5,
         spaceBetween: 50
       }
     }

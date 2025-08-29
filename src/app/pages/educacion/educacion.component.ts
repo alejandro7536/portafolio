@@ -89,11 +89,6 @@ export class EducacionComponent implements OnInit {
         image: './assets/img/certiprof.png',
         name: 'Scrum Foundations Professional Certificate (SFPC) - (Spanish)',
         url: '/'
-      },
-      {
-        image: './assets/svg/udemy.svg',
-        name: 'Curso de Trading - Gana Dinero desde Casa',
-        url: 'https://www.udemy.com/certificate/UC-80349f4f-1fe3-4feb-b777-56c0b928ab28/'
       }
     ]
 

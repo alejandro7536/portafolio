@@ -2,7 +2,7 @@
 <div class="flex mt-8 mb-8 flex flex-col md:flex-row mt-2 md:mt-8 mb-8 w-full">
     <div class="w-full md:w-1/2 mr-8 animate__animated animate__fadeInLeft">
         <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4">Puesto laboral</h3>
-        <div class="h-64 rounded-xl shadow-md bg-gray-100 flex items-center justify-center p-4">
+        <div class="h-64 rounded-xl border bg-gray-100 flex items-center justify-center p-4">
             <div class="flex flex-col items-center">
                 <div class="bg-white h-14 w-14 rounded-lg flex items-center justify-center">
                     <img src="./assets/img/promerica.jpg" alt="" class="h-14 w-14 rounded-lg">
@@ -16,7 +16,7 @@
     <div class="w-full md:w-1/2 mt-4 md:mt-0 animate__animated animate__fadeInRight">
         <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4">Mi experiencia</h3>
         <div class="overflow-y-auto scrolling-touch rep short">
-            <div class="h-auto md:h-24 rounded-xl shadow-md bg-gray-100 flex items-center p-4 mb-4" *ngFor="let work of works">
+            <div class="h-auto md:h-24 rounded-xl border bg-gray-100 flex items-center p-4 mb-4" *ngFor="let work of works">
                 <div class="grid grid-cols-12 gap-1 w-full">
                     <div class="col-span-3 lg:col-span-2">
                         <div class="bg-white h-16 w-16 rounded-lg flex items-center justify-center">
@@ -46,7 +46,7 @@
     <swiper class="swiper-container" [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
         <ng-template swiperSlide *ngFor="let item of sideProjects">
             <a [href]="item.url" target="_blank">
-                <div class="h-48 w-48 rounded-xl shadow-md bg-gray-100 flex items-center justify-center p-4">
+                <div class="h-48 w-48 rounded-xl border bg-gray-100 flex items-center justify-center p-4">
                     <div class="flex flex-col items-center">
                         <div class="bg-white h-14 w-14 rounded-lg flex items-center justify-center">
                             <img [src]="item.image" alt="" class="h-10 w-10">
