@@ -57,10 +57,10 @@
             <!-- <div class="pl-4 md:pl-8 pt-4 animate__animated animate__fadeInDown">
 
             </div> -->
-            <div class="flex pl-4 pb-4 m-4 rounded-md pt-4 blur-b noisy animate__animated animate__fadeIn">
+            <div class="flex pl-4 pb-4 m-4 rounded-md pt-4 blur-b noisy animate__animated animate__fadeIn border border-gray-400">
               <div class="w-3/4">
-                <h3 style="font-family: 'gilroy_300';" class="text-md text-white">Universidad de El Salvador</h3>
                 <h2 style="font-family: 'gilroy_600';" class="text-xl text-white">Ingeniería de Sistemas informáticos</h2>
+                <h3 style="font-family: 'gilroy_300';" class="text-md text-white">Universidad de El Salvador</h3>
 
                 <div class="flex mt-2 gap-2">
                   <div class="bg-black bg-opacity-40 w-auto px-2 py-1 rounded-md text-center">
@@ -89,15 +89,14 @@
         </div>
 
         <!-- Conocimientos -->
-        <div class="h-auto rounded-md border bg-gray-100 mt-4 pl-4 md:pl-8 pr-8 pt-4 pb-4">
+        <div class="h-auto rounded-md border bg-gray-100 p-4 md:pl-8 md:pr-8 mt-4 ">
             <h3 style="font-family: 'gilroy_600';" class="text-xl text-gray-600 mb-4">Conocimientos</h3>
 
             <div class="w-full flex text-gray-600" style="font-family: 'gilroy_300';">
                 <div class="w-1/2 mt-2">
                     <ul class="list-disc pl-4">
                         <li class="text-sm">Programación Orientada a Objetos.</li>
-                        <li class="text-sm">Backend: Java, Spring Boot.</li>
-                        <li class="text-sm">Frontend: Javascript / Typescript, Angular, Bootstrap, MaterializeCSS, Tailwindcss, HTML5, CSS3, Chart.js, Google Analiytics, Google Tag Manager.</li>
+                        <li class="text-sm">Frontend: Javascript / Typescript, Angular, React, Bootstrap, MaterializeCSS, Tailwindcss, HTML5, CSS3, Chart.js, Google Analiytics, Google Tag Manager.</li>
                         <li class="text-sm">SOA / Restfull APIs.</li>
                         <li class="text-sm">Bases de datos: PostgreSQL, MySQL, Firebase.</li>
                         <li class="text-sm">Google: Analytics, Tag Manager, Looker Studio.</li>
@@ -108,14 +107,14 @@
                         <li class="text-sm">JSON</li>
                         <li class="text-sm">Windows enviroment.</li>
                         <li class="text-sm">Git</li>
-                        <li class="text-sm">Software: Taiga, Trello, MS Project, Github, Bitbucket, Heroku, Illustrator, Photoshop, Adobe XD.</li>
+                        <li class="text-sm">Software: Azure, Jira, Trello, MS Project, Github, Bitbucket, Heroku, Illustrator, Photoshop, Adobe XD.</li>
                         <li class="text-sm">Scrum</li>
                         <li class="text-sm">Notaciones: UML, XADL, BPMN.</li>
                     </ul>
                 </div>
             </div>
-            <div class="mt-8 flex flex-wrap">
-                <div *ngFor="let item of tecImages" class="w-6 mr-3 mb-3">
+            <div class="mt-8 flex flex-wrap gap-4 justify-between">
+                <div *ngFor="let item of tecImages" class="w-6 flex items-center justify-center">
                     <img [src]="item.value" alt="" class="h-7 w-7">
                 </div>
             </div>
@@ -140,7 +139,7 @@
                         </div>
                     </div>
                     <div class="col-span-10 flex items-center">
-                        <p class="text-sm text-gray-600 pl-2">{{item.name}}</p>
+                        <p class="text-sm text-gray-600 pl-6 md:pl-2">{{item.name}}</p>
                     </div>
                     <div class="flex items-center justify-center">
                         <a [href]="item.url" target="_blank">
@@ -162,7 +161,7 @@
                   <span class="text-sm text-white">Mi Curriculum para ser evaluado y considerado</span>
               </div>
               <div class="flex items-center justify-center">
-                  <a target="_blank" (click)="senTagCV()" href="https://firebasestorage.googleapis.com/v0/b/filechap-4038b.appspot.com/o/jvFrttjggxeZgPWRc2qCuYREWKI2%2Ffiles%2FAlejandro%20Alas%20-%20CV%20-%20lt2.pdf?alt=media&token=7f135eea-6ca7-4164-88c8-a52a4a48f35c">
+                  <a target="_blank" (click)="senTagCV()" href="https://firebasestorage.googleapis.com/v0/b/filechap-4038b.appspot.com/o/Alejandro%20Alas%20-CV.pdf?alt=media&token=b2bb1f68-82bf-4563-9c30-fb6c890e1300">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>

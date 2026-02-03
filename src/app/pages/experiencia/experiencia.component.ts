@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // import Swiper core and required modules
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y , SwiperOptions, Autoplay} from 'swiper';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, SwiperOptions, Autoplay } from 'swiper';
 import { Project } from '../../interfaces';
 
 // install Swiper modules
@@ -22,7 +22,7 @@ export class ExperienciaComponent implements OnInit {
       {
         image: './assets/img/author.png',
         name: 'Author Print',
-        url: 'http://author-print.com/',
+        url: 'https://app.author-print.com/',
         fechaInicio: 'Febrero 2025',
         fechaFin: 'Julio 2025'
       },
@@ -76,14 +76,22 @@ export class ExperienciaComponent implements OnInit {
         fechaFin: ''
       }
     ];
-     this.works = [
+    this.works = [
+      {
+        image: './assets/img/promerica.jpg',
+        url: 'https://www.promerica.com.sv/',
+        position: 'Analista Programador',
+        fechaInicio: 'Junio 2022',
+        fechaFin: 'Enero 2026',
+        empresa: 'Banco Promerica El Salvador'
+      },
       {
         image: './assets/img/promerica.jpg',
         url: 'https://www.promerica.com.sv/',
         position: 'Desarrollador Angular',
         fechaInicio: 'Enero 2021',
         fechaFin: 'Mayo 2022',
-        empresa: 'Banco Promerica'
+        empresa: 'Banco Promerica El Salvador'
       },
       {
         image: './assets/img/creativa.png',
@@ -93,8 +101,8 @@ export class ExperienciaComponent implements OnInit {
         fechaFin: null,
         empresa: 'Creativa Consultores'
       }
-     ]
-   }
+    ]
+  }
 
 
   config: SwiperOptions = {
@@ -129,10 +137,8 @@ export class ExperienciaComponent implements OnInit {
   }
 
   onSwiper(swiper: any) {
-    console.log(swiper);
   }
   onSlideChange() {
-    console.log('slide change');
   }
 
 }

@@ -97,6 +97,9 @@ export class EducacionComponent implements OnInit {
         value: './assets/tec/angular.svg'
       },
       {
+        value: './assets/tec/react.svg'
+      },
+      {
         value: './assets/tec/html.svg'
       },
       {
@@ -116,9 +119,6 @@ export class EducacionComponent implements OnInit {
       },
       {
         value: './assets/tec/typescript.svg'
-      },
-      {
-        value: './assets/tec/springboot.png'
       },
       {
         value: './assets/tec/postman.svg'
