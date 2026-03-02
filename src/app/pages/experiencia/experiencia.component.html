@@ -1,22 +1,24 @@
-<h1 style="font-family: 'gilroy_600';" class="mt-8 md:mt-0 text-4xl text-gray-600 animate__animated animate__fadeInLeft">Experiencia</h1>
-<div class="flex mt-8 mb-8 flex flex-col md:flex-row mt-2 md:mt-8 mb-8 w-full">
-    <div class="w-full md:w-1/2 mr-8 animate__animated animate__fadeInLeft">
-        <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4">Puesto laboral</h3>
-        <div class="h-64 rounded-xl border bg-gray-100 flex items-center justify-center p-4">
+<h1 style="font-family: 'gilroy_600';"
+    class="mt-8 md:mt-0 text-4xl text-gray-600 animate__animated animate__fadeInLeft">Experiencia</h1>
+<div class="flex mt-8 mb-8 flex-col md:flex-row mt-2 md:mt-8 mb-8 w-full h-3/5">
+    <div class="w-full md:w-1/2 mr-8 animate__animated animate__fadeInLeft mb-8">
+        <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 pb-4">Puesto laboral</h3>
+        <div class="h-full rounded-xl border bg-gray-100 flex items-center justify-center p-4 mb-4">
             <div class="flex flex-col items-center">
-                <div class="bg-white h-14 w-14 rounded-lg flex items-center justify-center">
-                    <img src="./assets/img/promerica.jpg" alt="" class="h-14 w-14 rounded-lg">
+                <div class="bg-white h-12 rounded-lg flex items-center justify-center">
+                    <img src="./assets/img/logo.png" alt="" class="h-10 w-auto rounded-lg">
                 </div>
-                <h1 style="font-family: 'gilroy_600';" class="text-2xl text-gray-600 mt-4">Banco Promerica</h1>
-                <h1 style="font-family: 'gilroy_600';" class="text-sm text-gray-600">Desarrollador Angular</h1>
-                <span class="text-sm text-gray-500"> Febrero 2026 - Actualidad </span>
+                <h1 style="font-family: 'gilroy_600';" class="text-2xl text-gray-600 mt-4">Digital Geko</h1>
+                <h1 style="font-family: 'gilroy_600';" class="text-sm text-gray-600">Desarrollador Frontend</h1>
+                <span class="text-sm text-gray-500"> Marzo 2026 - Actualidad </span>
             </div>
         </div>
     </div>
-    <div class="w-full md:w-1/2 mt-4 md:mt-0 animate__animated animate__fadeInRight">
-        <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4">Mi experiencia</h3>
-        <div class="overflow-y-auto scrolling-touch rep short h-64">
-            <div class="h-auto md:h-24 rounded-xl border bg-gray-100 flex items-center p-4 mb-4" *ngFor="let work of works">
+    <div class="w-full md:w-1/2 mt-4 md:mt-0 animate__animated animate__fadeInRight mb-8">
+        <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4 mt-8 md:mt-0">Mi experiencia</h3>
+        <div class="overflow-y-auto scrolling-touch rep short h-full">
+            <div class="h-auto md:h-24 rounded-xl border bg-gray-100 flex items-center p-4 mb-4"
+                *ngFor="let work of works">
                 <div class="grid grid-cols-12 gap-1 w-full">
                     <div class="col-span-3 lg:col-span-2">
                         <div class="bg-white h-16 w-16 rounded-lg flex items-center justify-center">
@@ -26,13 +28,16 @@
                     <div class="col-span-8 lg:col-span-9 flex flex-col">
                         <p class="text-lg text-gray-600" style="font-family: 'gilroy_600';">{{work.empresa}}</p>
                         <p class="text-sm text-gray-600" style="font-family: 'gilroy_600';">{{work.position}}</p>
-                        <p class="text-xs text-gray-600" style="font-family: 'gilroy_300';">{{work.fechaInicio}}{{work.fechaFin? ' - ': ''}}{{work.fechaFin}}</p>
+                        <p class="text-xs text-gray-600" style="font-family: 'gilroy_300';">
+                            {{work.fechaInicio}}{{work.fechaFin? ' - ': ''}}{{work.fechaFin}}</p>
                     </div>
                     <div class="flex items-center justify-center">
                         <a [href]="work.url" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -41,7 +46,7 @@
     </div>
 </div>
 
-<div class="animate__animated animate__fadeInUp">
+<div class="animate__animated animate__fadeInUp h-1/5">
     <h3 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mb-4">Proyectos secundarios</h3>
     <swiper class="swiper-container" [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
         <ng-template swiperSlide *ngFor="let item of sideProjects">
@@ -52,7 +57,8 @@
                             <img [src]="item.image" alt="" class="h-10 w-10">
                         </div>
                         <h1 style="font-family: 'gilroy_600';" class="text-lg text-gray-600 mt-4">{{item.name}}</h1>
-                        <span class="text-xs text-gray-500"> {{item.fechaInicio}} {{item.fechaFin? '-': ''}} {{item.fechaFin}} </span>
+                        <span class="text-xs text-gray-500"> {{item.fechaInicio}} {{item.fechaFin? '-': ''}}
+                            {{item.fechaFin}} </span>
                     </div>
                 </div>
             </a>
