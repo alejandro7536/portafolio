@@ -1,3 +1,14 @@
 .rep::-webkit-scrollbar {
     display: none;
 }
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'gilroy_300';
+    font-size: 0.75rem;
+    color: #4b5563;
+    background: #f3f4f6;
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.625rem;
+}

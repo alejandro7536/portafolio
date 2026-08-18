@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { SwiperModule } from 'swiper/angular';
 import { Sidebar2Component } from './components/sidebar2/sidebar2.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 

@@ -1,23 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
-// import Swiper core and required modules
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, SwiperOptions, Autoplay } from 'swiper';
+import EmblaCarousel, { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
+import Autoplay from 'embla-carousel-autoplay';
 import { Project } from '../../interfaces';
-
-// install Swiper modules
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
   styleUrls: ['./experiencia.component.css']
 })
-export class ExperienciaComponent implements OnInit {
+export class ExperienciaComponent implements OnInit, AfterViewInit, OnDestroy {
+
+  @ViewChild('emblaRef') emblaRef!: ElementRef<HTMLElement>;
 
   sideProjects!: Project[];
   works!: any[];
 
-  constructor() {
+  private emblaApi?: EmblaCarouselType;
+  scrollSnaps: number[] = [];
+  selectedIndex = 0;
+
+  constructor(private ngZone: NgZone) {
     this.sideProjects = [
       {
         image: './assets/img/chap-coffee.png',
@@ -29,7 +32,7 @@ export class ExperienciaComponent implements OnInit {
       {
         image: './assets/img/author.png',
         name: 'Author Print',
-        url: 'https://app.author-print.com/',
+        url: 'https://app.author-print.com/auth/login',
         fechaInicio: 'Febrero 2025',
         fechaFin: 'Julio 2025'
       },
@@ -112,40 +115,48 @@ export class ExperienciaComponent implements OnInit {
   }
 
 
-  config: SwiperOptions = {
-    navigation: false,
-    pagination: { clickable: true },
-    autoplay: true,
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 1.7,
-        spaceBetween: 20
-      },
-      // when window width is >= 480px
-      480: {
-        slidesPerView: 3.3,
-        spaceBetween: 30
-      },
-      // when window width is >= 640px
-      900: {
-        slidesPerView: 4.3,
-        spaceBetween: 50
-      },
-      1200: {
-        slidesPerView: 6.5,
-        spaceBetween: 50
-      }
-    }
-  };
-
   ngOnInit(): void {
 
   }
 
-  onSwiper(swiper: any) {
+  ngAfterViewInit(): void {
+    const options: EmblaOptionsType = {
+      loop: false,
+      align: 'start',
+      containScroll: 'trimSnaps'
+    };
+
+    // Embla's internal scroll/resize listeners run on every frame while
+    // dragging; keeping them outside Angular's zone avoids a change
+    // detection cycle per pointer move.
+    this.ngZone.runOutsideAngular(() => {
+      this.emblaApi = EmblaCarousel(this.emblaRef.nativeElement, options, [
+        Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+      ]);
+      this.emblaApi.on('init', () => this.syncState());
+      this.emblaApi.on('reInit', () => this.syncState());
+      this.emblaApi.on('select', () => this.syncState());
+    });
   }
-  onSlideChange() {
+
+  ngOnDestroy(): void {
+    this.emblaApi?.destroy();
+  }
+
+  scrollTo(index: number): void {
+    this.emblaApi?.scrollTo(index);
+  }
+
+  private syncState(): void {
+    if (!this.emblaApi) {
+      return;
+    }
+    const scrollSnaps = this.emblaApi.scrollSnapList();
+    const selectedIndex = this.emblaApi.selectedScrollSnap();
+    this.ngZone.run(() => {
+      this.scrollSnaps = scrollSnaps;
+      this.selectedIndex = selectedIndex;
+    });
   }
 
 }

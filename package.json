@@ -21,10 +21,11 @@
     "@fancyapps/fancybox": "^3.5.7",
     "angular-google-tag-manager": "^1.4.2",
     "animate.css": "^4.1.1",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-autoplay": "^8.6.0",
     "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.4.7",
-    "swiper": "^7.0.8",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },

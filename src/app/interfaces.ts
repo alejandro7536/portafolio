@@ -1,6 +1,7 @@
 export interface InformationRow {
   title : string;
   description: any;
+  icon?: string;
 }
 
 export interface Image {

@@ -1,0 +1,11 @@
+.spotlight-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: var(--spotlight-opacity, 0);
+    transition: opacity 0.35s ease;
+    background: radial-gradient(360px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+            #64748b 0%,
+            #cbd5e1 32%,
+            transparent 65%);
+}

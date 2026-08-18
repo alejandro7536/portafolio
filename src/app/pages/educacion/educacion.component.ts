@@ -21,6 +21,8 @@ export class EducacionComponent implements OnInit {
   tecImages!: any[];
   mailForm!: FormGroup;
   enviando: boolean = false;
+  copiedField: string | null = null;
+  showContactForm: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -30,27 +32,33 @@ export class EducacionComponent implements OnInit {
     this.informacion = [
       {
         title: 'Edad',
-        description: `${new Date().getFullYear() - 1995} años`
+        description: `${new Date().getFullYear() - 1995} años`,
+        icon: 'age'
       },
       {
         title: 'Dirección',
-        description: 'Santa Rita, Chalatenango'
+        description: 'Santa Rita, Chalatenango',
+        icon: 'location'
       },
       {
         title: 'Fecha de nacimiento',
-        description: '28 de febrero de 1995'
+        description: '28 de febrero de 1995',
+        icon: 'calendar'
       },
       {
         title: 'Teléfono',
-        description: '75345969'
+        description: '75345969',
+        icon: 'phone'
       },
       {
         title: 'Idiomas',
-        description: 'Español, inglés básico'
+        description: 'Español, inglés básico',
+        icon: 'language'
       },
       {
         title: 'Correo',
-        description: 'alejandroalas7536@gmail.com'
+        description: 'alejandroalas7536@gmail.com',
+        icon: 'mail'
       }
     ]
 
@@ -161,6 +169,17 @@ export class EducacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
+  }
+
+  copyToClipboard(value: string, field: string): void {
+    navigator.clipboard.writeText(value).then(() => {
+      this.copiedField = field;
+      setTimeout(() => {
+        if (this.copiedField === field) {
+          this.copiedField = null;
+        }
+      }, 1500);
+    });
   }
 
   createForm() {

@@ -1,10 +1,141 @@
-.swiper-container {
+@property --glide-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.glide-border::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(from var(--glide-angle),
+            transparent 0deg,
+            transparent 260deg,
+            #93c5fd 300deg,
+            #60a5fa 320deg,
+            #93c5fd 340deg,
+            transparent 360deg);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: glide-rotate 4s linear infinite;
+}
+
+@keyframes glide-rotate {
+    to {
+        --glide-angle: 360deg;
+    }
+}
+
+.embla {
+    overflow: hidden;
     width: 100%;
-    height: 230px;
+    cursor: grab;
+}
+
+.embla:active {
+    cursor: grabbing;
+}
+
+.embla__container {
+    display: flex;
+    margin-left: -20px;
+}
+
+.embla__slide {
+    flex: 0 0 58.8%;
+    min-width: 0;
+    padding-left: 20px;
+}
+
+.embla__slide img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+}
+
+.embla__slide,
+.embla__slide a,
+.embla__slide img {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+@media only screen and (min-width: 480px) {
+    .embla__container {
+        margin-left: -30px;
+    }
+
+    .embla__slide {
+        flex-basis: 30.3%;
+        padding-left: 30px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .embla__container {
+        margin-left: -50px;
+    }
+
+    .embla__slide {
+        flex-basis: 23.26%;
+        padding-left: 50px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .embla__slide {
+        flex-basis: 15.38%;
+    }
+}
+
+.embla__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.embla__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: #d1d5db;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.embla__dot--selected {
+    background: #3b82f6;
+    transform: scale(1.2);
 }
 
 .rep::-webkit-scrollbar {
     display: none;
+}
+
+.exp-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.exp-card:hover {
+    transform: translateY(-2px);
+}
+
+.exp-arrow {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.exp-card:hover .exp-arrow {
+    transform: translateX(2px);
+    color: #4b5563;
 }
 
 .short {
