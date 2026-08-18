@@ -20,6 +20,13 @@ export class ExperienciaComponent implements OnInit {
   constructor() {
     this.sideProjects = [
       {
+        image: './assets/img/chap-coffee.png',
+        name: 'Chap Coffee',
+        url: 'https://alejandro7536.github.io/coffe-app/',
+        fechaInicio: 'Julio 2026',
+        fechaFin: 'Agosto 2026'
+      },
+      {
         image: './assets/img/author.png',
         name: 'Author Print',
         url: 'https://app.author-print.com/',
@@ -40,13 +47,13 @@ export class ExperienciaComponent implements OnInit {
         fechaInicio: 'Marzo 2020',
         fechaFin: 'Abril 2020'
       },
-      {
-        image: './assets/img/filechap.png',
-        name: 'FileChap',
-        url: 'https://filechap.elesteam.com/',
-        fechaInicio: 'Agosto 2020',
-        fechaFin: 'Octubre 2020'
-      },
+      // {
+      //   image: './assets/img/filechap.png',
+      //   name: 'FileChap',
+      //   url: 'https://filechap.elesteam.com/',
+      //   fechaInicio: 'Agosto 2020',
+      //   fechaFin: 'Octubre 2020'
+      // },
       {
         image: './assets/img/vago.svg',
         name: 'Vago',

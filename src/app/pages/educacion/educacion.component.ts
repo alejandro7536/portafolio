@@ -100,6 +100,9 @@ export class EducacionComponent implements OnInit {
         value: './assets/tec/react.svg'
       },
       {
+        value: './assets/tec/Next.js.svg'
+      },
+      {
         value: './assets/tec/html.svg'
       },
       {
@@ -149,6 +152,9 @@ export class EducacionComponent implements OnInit {
       },
       {
         value: './assets/tec/ic_looker_studio.svg'
+      },
+      {
+        value: './assets/tec/claude-color.svg'
       },
     ]
   }
@@ -209,7 +215,7 @@ export class EducacionComponent implements OnInit {
         content: {
           description: 'Contacto por correo electronico',
           name: this.mailForm.get('name')?.value,
-          email:this.mailForm.get('email')?.value,
+          email: this.mailForm.get('email')?.value,
           message: this.mailForm.get('message')?.value
         }
       });
